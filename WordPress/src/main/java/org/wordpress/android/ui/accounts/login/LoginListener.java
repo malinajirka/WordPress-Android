@@ -22,7 +22,7 @@ public interface LoginListener {
     void helpEmailScreen(String email, Tag origin);
 
     // Login Error callbacks
-    void helpErrorEmail(String email);
+    void helpErrorGeneric(String email);
 
     // Login Request Magic Link callbacks
     void showMagicLinkSentScreen(String email);

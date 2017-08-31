@@ -21,9 +21,6 @@ public interface LoginListener {
     void loginViaWpcomUsernameInstead();
     void helpEmailScreen(String email, Tag origin);
 
-    // Login Error callbacks
-    void helpErrorGeneric(String email);
-
     // Login Request Magic Link callbacks
     void showMagicLinkSentScreen(String email);
     void usePasswordInstead(String email);

@@ -447,7 +447,7 @@ public class LoginEmailFragment extends LoginBaseFormFragment<LoginListener>
             AppLog.e(T.API, "LoginEmailFragment.onAuthenticationChanged: " + event.error.type + " - " + event.error.message);
             AnalyticsTracker.track(AnalyticsTracker.Stat.LOGIN_FAILED, event.getClass().getSimpleName(),
                     event.error.type.toString(), event.error.message);
-            // TODO: Show error screen.
+            showErrorDialog(getString(R.string.login_error_generic));
         } else if (mAccountStore.hasAccessToken()) {
             mDispatcher.dispatch(AccountActionBuilder.newFetchAccountAction());
             NotificationsUpdateService.startService(getActivity().getApplicationContext());
@@ -467,7 +467,9 @@ public class LoginEmailFragment extends LoginBaseFormFragment<LoginListener>
                 case UNKNOWN_USER:
                     showErrorDialog(getString(R.string.login_error_email_not_found, mGoogleEmail));
                     break;
+                case GENERIC_ERROR:
                 default:
+                    showErrorDialog(getString(R.string.login_error_generic));
                     break;
             }
         }

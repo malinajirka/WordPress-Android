@@ -48,6 +48,7 @@ public class ShareIntentReceiverActivity extends AppCompatActivity implements On
     private static final int ADD_TO_NEW_POST = 0;
     private static final int ADD_TO_MEDIA_LIBRARY = 1;
 
+
     @Inject AccountStore mAccountStore;
     @Inject SiteStore mSiteStore;
 
